@@ -48,8 +48,8 @@ function arsdist_civicrm_triggerInfo(&$info, $tableName) {
   0)
   ->execute()
   ->first();
-  $columnName = $customField['column_name'];
-  $tableName = $customField['custom_group']['table_name'];
+  $columnName = $customField['column_name'] ?? NULL;
+  $tableName = $customField['custom_group']['table_name'] ?? NULL;
 
   if (empty($tableName) || empty($columnName)) {
     // No such custom field found; do nothing and return.
